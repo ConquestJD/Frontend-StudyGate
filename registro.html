@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles/registro_styles.css">
+    <script src="config/registro_config.js"></script>
+    <header>
+        <h1>StudyGate</h1>
+    </header>
+</head>
+<body>
+<h1 class="titulo">Registro</h1>
+<div>
+    <label for="rol">Registrarse como:</label>
+    <select id="rol" name="rol" required>
+        <option value="">Seleccione...</option>
+        <option value="estudiante">Estudiante</option>
+        <option value="instructor">Instructor</option>
+    </select>
+</div>
+<form id="formularioRegistroEstudiante" style="display: none;">
+    <!-- Aquí va el formulario de registro para estudiantes -->
+    <label for="nombreEstudiante">Nombre:</label>
+    <input type="text" id="nombreEstudiante" name="nombreEstudiante" required>
+    <label for="correoEstudiante">Correo electrónico:</label>
+    <input type="email" id="correoEstudiante" name="correoEstudiante" required>
+    <label for="contraseñaEstudiante">Contraseña:</label>
+    <input type="password" id="contraseñaEstudiante" name="contraseñaEstudiante" required>
+    <label for="nivelEducativo">Nivel Educativo (1-10):</label>
+    <select id="nivelEducativo" name="nivelEducativo" required>
+        <option value="">Seleccione...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <button type="submit">Registrarse</button>
+    <button type="button" onclick="window.location.href='index.html';">Cancelar</button>
+</form>
+<form id="formularioRegistroInstructor" style="display: none;">
+    <!-- Aquí va el formulario de registro para instructores -->
+    <label for="nombreInstructor">Nombre:</label>
+    <input type="text" id="nombreInstructor" name="nombreInstructor" required>
+    <label for="correoInstructor">Correo electrónico:</label>
+    <input type="email" id="correoInstructor" name="correoInstructor" required>
+    <label for="contraseñaInstructor">Contraseña:</label>
+    <input type="password" id="contraseñaInstructor" name="contraseñaInstructor" required>
+    <label for="especialidades">Especialidades:</label>
+    <input type="text" id="especialidades" name="especialidades" required>
+    <button type="submit">Registrarse</button>
+    <button type="button" onclick="window.location.href='index.html';">Cancelar</button>
+</form>
+<script>
+    document.getElementById('rol').addEventListener('change', function() {
+        document.getElementById('formularioRegistroEstudiante').style.display = this.value === 'estudiante' ? 'block' : 'none';
+        document.getElementById('formularioRegistroInstructor').style.display = this.value === 'instructor' ? 'block' : 'none';
+    });
+</script>
+</body>
+</html>

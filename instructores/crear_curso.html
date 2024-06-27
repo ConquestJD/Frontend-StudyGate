@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Curso</title>
+    <link rel="stylesheet" href="styles/crear_curso_styles.css">
+    <script src="config/crear_curso_config.js"></script>
+</head>
+<body>
+<header>
+    <h1>StudyGate</h1>
+    <nav>
+        <a href="home_instructores.html">Inicio</a>
+        <a href="mis_cursos_instructores.html">Mis Cursos</a>
+        <a href="crear_curso.html">Crear Curso</a>
+        <a href="crear_evaluacion.html">Crear Evaluacion</a>
+        <a href="crear_leccion.html">Crear Leccion</a>
+        <a href="crear_material.html">Crear Material</a>
+        <a href="../index.html">Cerrar Sesión</a>
+    </nav>
+</header>
+<h1 class="titulo">Crear Curso</h1>
+<form id="crearCursoForm">
+    <label for="nombre">Nombre del curso:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" name="descripcion" required></textarea>
+    <label for="costo">Costo:</label>
+    <input type="number" id="costo" name="costo" step="0.01" required>
+    <button type="submit">Crear Curso</button>
+</form>
+</body>
+</html>
